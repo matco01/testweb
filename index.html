@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voltix – Electronics Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">Free delivery over 1 500 Kč · 30-day returns · Demo shop – nothing is real, no money is charged</div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#/" class="logo"><span class="logo-mark">V</span>voltix</a>
+
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Categories">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <form class="search" id="searchForm" autocomplete="off">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="searchInput" type="search" placeholder="Search laptops, phones, headphones…" />
+        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+        <div class="suggest" id="suggest"></div>
+      </form>
+
+      <nav class="header-actions">
+        <a href="#/orders" class="icon-btn" title="My orders">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span class="label">Orders</span>
+        </a>
+        <a href="#/wishlist" class="icon-btn" title="Wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="badge" id="wishBadge" hidden>0</span>
+          <span class="label">Wishlist</span>
+        </a>
+        <button class="icon-btn cart-btn" id="cartBtn" title="Cart">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="badge" id="cartBadge" hidden>0</span>
+          <span class="label" id="cartTotalLabel">Cart</span>
+        </button>
+      </nav>
+    </div>
+
+    <nav class="catnav" id="catnav"><div class="container catnav-inner" id="catnavInner"></div></nav>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="#/" class="logo"><span class="logo-mark">V</span>voltix</a>
+        <p class="muted">A fake electronics shop built for fun. Products, prices and orders are not real.</p>
+      </div>
+      <div><h4>Shop</h4><div id="footerCats"></div></div>
+      <div><h4>Help</h4><a href="#/orders">My orders</a><a href="#/cart">Cart</a><span class="muted">Promo codes: TECH10, WELCOME</span></div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Cart">
+    <div class="drawer-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" id="drawerClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot" id="drawerFoot"></div>
+  </aside>
+
+  <div class="toasts" id="toasts"></div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
